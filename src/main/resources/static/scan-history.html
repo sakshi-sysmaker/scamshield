@@ -1,0 +1,124 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><title>Scan History - ScamShield</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed":"#022100","secondary-fixed":"#79ff5b","surface-container":"#16221d","surface-tint":"#3ce36a","on-secondary-container":"#0f6d00","on-surface":"#d7e6dd","inverse-primary":"#006e2a","on-primary":"#003912","on-background":"#d7e6dd","surface-container-high":"#202d27","on-error":"#690005","tertiary-fixed":"#d0e8d8","on-primary-fixed":"#002108","on-error-container":"#ffdad6","on-tertiary-fixed":"#0a1f16","on-tertiary-container":"#30463a","on-primary-fixed-variant":"#00531e","surface-container-low":"#121e19","on-secondary-fixed-variant":"#095300","tertiary-container":"#9bb3a4","tertiary-fixed-dim":"#b4ccbd","inverse-on-surface":"#26332d","outline-variant":"#3c4a3c","surface-container-highest":"#2b3831","surface-container-lowest":"#05110c","on-primary-container":"#004c1b","inverse-surface":"#d7e6dd","secondary-container":"#2ff801","primary-container":"#00c853","surface-variant":"#2b3831","surface-bright":"#2f3c36","tertiary":"#b6cebf","outline":"#869583","error":"#ffb4ab","surface-dim":"#091611","on-tertiary-fixed-variant":"#364b40","on-surface-variant":"#bbcbb8","secondary-fixed-dim":"#2ae500","background":"#091611","error-container":"#93000a","primary-fixed":"#69ff87","secondary":"#d7ffc5","on-tertiary":"#20352a","on-secondary":"#053900","surface":"#091611","primary-fixed-dim":"#3ce36a","primary":"#3fe56c"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{},fontFamily:{headline:["JetBrains Mono"],display:["JetBrains Mono"],body:["Inter"],label:["JetBrains Mono"]},fontSize:{}}}}</script></head><body class="bg-background font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col"><div class="h-16 flex items-center px-6 bg-surface-container-lowest"><a href="#" class="flex items-center gap-3 text-primary hover:opacity-90 transition-opacity"><span class="material-symbols-outlined text-2xl">shield</span><span class="font-headline font-bold text-base tracking-wider uppercase">ScamShield</span></a></div><div class="flex-1 overflow-y-auto py-4 px-3"><nav class="space-y-1 font-label text-xs tracking-wider" data-active-classes="bg-primary text-on-primary font-semibold"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-lg">home</span><span class="">Home</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-lg">grid_view</span><span class="">Dashboard</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="message-scanner" href="#"><span class="material-symbols-outlined text-lg">sms</span><span class="">Message Scanner</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="link-scanner" href="#"><span class="material-symbols-outlined text-lg">link</span><span class="">Link Scanner</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="email-scanner" href="#"><span class="material-symbols-outlined text-lg">mail</span><span class="">Email Scanner</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="phone-number-scanner" href="#"><span class="material-symbols-outlined text-lg">call</span><span class="">Phone Number Scanner</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="scan-results" href="#"><span class="material-symbols-outlined text-lg">troubleshoot</span><span class="">Scan Results</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded bg-primary text-[#0a1f0f] font-body font-semibold transition-colors" data-path="scan-history" href="#"><span class="material-symbols-outlined text-lg text-[#0a1f0f]">history</span><span class="text-[#0a1f0f]">Scan History</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="report-a-scam" href="#"><span class="material-symbols-outlined text-lg">flag</span><span class="">Report a Scam</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="scam-awareness" href="#"><span class="material-symbols-outlined text-lg">menu_book</span><span class="">Scam Awareness</span></a></nav></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-6 flex items-center justify-between gap-6"><div class="flex-1 max-w-lg mx-6"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-headline text-xs rounded pl-9 pr-14 py-2 outline-none hover:bg-surface-container focus:bg-surface-container transition-colors" placeholder="Search scans" type="text"><div class="absolute right-3 flex items-center pointer-events-none"><span class="font-label text-[10px] text-outline bg-surface-container-high px-1.5 py-0.5 rounded">/</span></div></div></div><div class="flex items-center gap-4"><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right"><span class="font-headline text-xs font-semibold text-on-surface">Guest</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-[#0a1f0f] text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-background w-full px-8 min-h-screen"><div class="flex flex-col w-full pb-16">
+    <!-- Top decorative matrix HUD trace bar -->
+    <div class="relative w-full h-1 bg-surface-container-low mb-6 overflow-hidden">
+        <div class="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-transparent via-primary to-transparent opacity-60"></div>
+    </div>
+    <!-- Main Grid Frame -->
+    <div class="w-full max-w-none mx-auto flex flex-col gap-6">
+        <!-- Page Header & HUD Stats Strip -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 bg-surface-container-low p-6 rounded shadow-md border-l-2 border-primary">
+            <div class="flex flex-col gap-1">
+
+                <h1 class="font-headline text-2xl md:text-3xl font-bold tracking-tight text-on-surface">Scan History</h1>
+                <p class="font-body text-xs md:text-sm text-on-surface-variant">Your past scans appear here.</p>
+            </div>
+
+        </div>
+        <!-- Filter Bar & Search Utility -->
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-surface-container p-4 rounded shadow-sm">
+            <div class="flex flex-wrap items-center gap-3">
+                <!-- Type Filter Label & Select -->
+                <div class="flex items-center gap-2">
+                    <label class="font-label text-xs uppercase text-on-surface-variant flex items-center gap-1.5 whitespace-nowrap" for="historyFilter">
+                        <span class="material-symbols-outlined text-sm text-primary">filter_alt</span>
+                        Scan Type:
+                    </label>
+                    <div class="relative">
+                        <select class="appearance-none bg-surface-container-lowest text-on-surface font-headline text-xs rounded pl-3 pr-8 py-2 outline-none hover:bg-surface-container-high focus:bg-surface-container-high transition-colors cursor-pointer border-0" id="historyFilter">
+                            <option value="All">All</option>
+                            <option value="Message">Message</option>
+                            <option value="Link">Link</option>
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                        </select>
+                        <span class="material-symbols-outlined text-outline pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-sm">expand_more</span>
+                    </div>
+                </div>
+                <!-- Keyword search within historical scope -->
+
+            </div>
+            <!-- Action buttons -->
+            <div class="flex items-center gap-2 justify-end">
+                <button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-label text-xs tracking-wider transition-colors" id="refreshBtn" type="button">
+                    <span class="material-symbols-outlined text-sm text-primary">sync</span>
+                    <span class="">Refresh</span>
+                </button>
+                <button class="flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label text-xs tracking-wider transition-colors" id="clearBtn" type="button"><span class="material-symbols-outlined text-sm">delete_sweep</span><span class="">Clear</span></button>
+            </div>
+        </div>
+        <!-- Telemetry Table Container -->
+        <div class="bg-surface-container-low rounded shadow-md flex flex-col w-full min-w-0">
+            <!-- Table Header & Metadata info -->
+
+            <!-- Table View -->
+            <div class="w-full overflow-x-auto min-w-full">
+                <table class="w-full min-w-[900px] text-left border-collapse">
+                    <thead>
+                    <tr class="bg-surface-container text-on-surface-variant font-label text-[11px] uppercase tracking-wider">
+                        <th class="py-3 px-5 font-semibold" scope="col">Date</th>
+                        <th class="py-3 px-5 font-semibold" scope="col">Type</th>
+                        <th class="py-3 px-5 font-semibold" scope="col">Item</th>
+                        <th class="py-3 px-5 font-semibold" scope="col">Risk Level</th>
+                        <th class="py-3 px-5 font-semibold" scope="col">Server Location</th>
+                    </tr>
+                    </thead>
+                    <tbody class="font-headline text-xs divide-y divide-transparent" id="scanTableBody">
+                    <!-- Single allowed Empty State Row spanning all 5 columns -->
+                    <tr class="hover:bg-transparent">
+                        <td class="py-24 px-6 text-center" colspan="5">
+                            <div class="flex flex-col items-center justify-center max-w-sm mx-auto gap-3">
+                                <div class="w-14 h-14 rounded bg-surface-container flex items-center justify-center text-outline">
+                                    <span class="material-symbols-outlined text-3xl">history_toggle_off</span>
+                                </div>
+                                <div class="flex flex-col gap-1 mt-1">
+                                    <span class="font-headline text-sm font-semibold text-on-surface tracking-wide">No scans yet</span>
+                                    <p class="font-body text-xs text-on-surface-variant">Your scans will appear here</p>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table Footer Utility / Status -->
+            <div class="px-5 py-3 bg-surface-container-lowest flex items-center justify-between text-outline font-label text-[11px]">
+                <span class="">DISPLAYING 0 OF 0 ENTRIES</span>
+
+            </div>
+        </div>
+        <!-- Risk Level Legend & Regulatory Compliance Bar -->
+
+        <div class="text-xs text-neutral-500 text-center py-4 border-t border-neutral-800/40 mt-8">Results are estimates. Always double-check before sharing personal or financial information.</div></div>
+</div>
+    <script>
+        // Filter and reset interaction handling
+        const historyFilter = document.getElementById('historyFilter');
+        const tableFilterInput = document.getElementById('tableFilterInput');
+        const clearBtn = document.getElementById('clearBtn');
+        const refreshBtn = document.getElementById('refreshBtn');
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (historyFilter) historyFilter.value = 'All';
+                if (tableFilterInput) tableFilterInput.value = '';
+            });
+        }
+
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => {
+                const icon = refreshBtn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.classList.add('animate-spin');
+                    setTimeout(() => {
+                        icon.classList.remove('animate-spin');
+                    }, 500);
+                }
+            });
+        }
+    </script></main></div>
+<script src="nav.js"></script>
+<script src="extra.js"></script>
+</body></html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scam Shield</title>
+    <style>
+        :root{--line:#E5E7EB;--text:#374151}
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--text);
+            background:
+                    radial-gradient(circle at 15% 20%, rgba(165,180,252,.45) 0, transparent 40%),
+                    radial-gradient(circle at 85% 15%, rgba(167,243,208,.45) 0, transparent 40%),
+                    radial-gradient(circle at 70% 85%, rgba(253,230,138,.35) 0, transparent 40%),
+                    radial-gradient(circle at 20% 85%, rgba(251,207,232,.40) 0, transparent 40%),
+                    #F8FAFC;
+            background-attachment:fixed}
+        .top{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;
+            background:rgba(255,255,255,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+        .top h1{font-size:20px;margin:0}
+        .wrap{max-width:680px;margin:0 auto;padding:24px}
+        .card{background:rgba(255,255,255,.75);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85);
+            border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.05);
+            transition:transform .2s,box-shadow .2s}
+        .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10)}
+        textarea{width:100%;height:120px;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:15px;resize:vertical}
+        textarea:focus{outline:none;border-color:#818CF8;box-shadow:0 0 0 3px rgba(129,140,248,.25)}
+        button{border:none;border-radius:8px;padding:10px 16px;cursor:pointer;font-size:14px;background:var(--line);
+            color:var(--text);transition:transform .2s,box-shadow .2s}
+        button:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+        button.main{background:#C7D2FE}
+        .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+        .barbox{background:var(--line);border-radius:8px;height:14px;overflow:hidden;margin:10px 0}
+        #bar{height:100%;width:0;transition:width .5s}
+        table{width:100%;border-collapse:collapse;font-size:14px}
+        td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left}
+        .hidden{display:none}
+        h2{margin:0 0 6px}
+    </style>
+</head>
+<body>
+<div class="top">
+    <h1>🛡️ Scam Shield</h1>
+    <span>Check before you trust</span>
+</div>
+<div class="wrap">
+    <div class="card">
+        <p>Paste a suspicious message or link to check if it is a scam.</p>
+        <textarea id="msg" placeholder="Paste message or link here..."></textarea>
+        <div class="row">
+            <button class="main" id="checkBtn">Check Now</button>
+            <button id="clearBtn">Clear</button>
+        </div>
+        <div class="row">
+            <button id="sample1">Sample scam</button>
+            <button id="sample2">Sample safe</button>
+            <button id="sample3">Sample link</button>
+        </div>
+    </div>
+
+    <div class="card hidden" id="result">
+        <h2 id="label"></h2>
+        <div id="scoreTxt"></div>
+        <div class="barbox"><div id="bar"></div></div>
+        <b>Why flagged</b>
+        <ul id="reasons"></ul>
+        <div class="row">
+            <span>Was this correct?</span>
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+            <button id="copyBtn">Copy result</button>
+        </div>
+        <p id="note"></p>
+    </div>
+
+    <div class="card">
+        <b>Recent checks</b>
+        <table>
+            <thead><tr><th>Message</th><th>Score</th><th>Risk</th></tr></thead>
+            <tbody id="history"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <b>What to do next</b>
+        <ul>
+            <li>Never share your OTP or PIN.</li>
+            <li>Don't click unknown links.</li>
+            <li>Verify with the official company.</li>
+        </ul>
+    </div>
+
+    <div class="card" style="background:rgba(209,250,229,.8)">
+        <b>Cyber Crime Helpline: 1930 | cybercrime.gov.in</b>
+    </div>
+</div>
+
+<script>
+    const $ = id => document.getElementById(id);
+
+    $("sample1").onclick = () => $("msg").value = "URGENT: Your KYC is expired. Share OTP immediately or your account will be blocked. Click http://bit.ly/kyc-update";
+    $("sample2").onclick = () => $("msg").value = "Hi, are we meeting at 5 pm for the project discussion?";
+    $("sample3").onclick = () => $("msg").value = "Claim your prize now: http://secure-login-bank.xyz";
+    $("clearBtn").onclick = () => { $("msg").value = ""; $("result").classList.add("hidden"); };
+
+    $("checkBtn").onclick = async () => {
+        const text = $("msg").value.trim();
+        if (!text) return;
+        let d;
+        try {
+            const res = await fetch("/check", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({text})
+            });
+            d = await res.json();
+        } catch (e) {
+            alert("Backend not connected");
+            return;
+        }
+        const color = d.score >= 60 ? "#FECACA" : d.score >= 30 ? "#FDE68A" : "#D1FAE5";
+        const barColor = d.score >= 60 ? "#F87171" : d.score >= 30 ? "#FBBF24" : "#34D399";
+        $("result").classList.remove("hidden");
+        $("result").style.background = color;
+        $("label").textContent = d.label;
+        $("scoreTxt").textContent = d.score + " / 100";
+        $("bar").style.width = d.score + "%";
+        $("bar").style.background = barColor;
+        $("reasons").innerHTML = "";
+        (d.reasons.length ? d.reasons : ["No red flags found"]).forEach(r => {
+            const li = document.createElement("li");
+            li.textContent = r;
+            $("reasons").appendChild(li);
+        });
+        $("note").textContent = "";
+        const short = text.length > 30 ? text.slice(0, 30) + "..." : text;
+        const tr = document.createElement("tr");
+        tr.innerHTML = "<td></td><td></td><td></td>";
+        tr.children[0].textContent = short;
+        tr.children[1].textContent = d.score;
+        tr.children[2].textContent = d.label;
+        $("history").prepend(tr);
+    };
+
+    $("yesBtn").onclick = $("noBtn").onclick = () => $("note").textContent = "Thanks for your feedback!";
+    $("copyBtn").onclick = () => {
+        navigator.clipboard.writeText($("label").textContent + " (" + $("scoreTxt").textContent + ")");
+        $("note").textContent = "Copied!";
+    };
+</script>
+</body>
+</html>

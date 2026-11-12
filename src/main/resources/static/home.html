@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="dark" lang="en"><head></head><body class="bg-background text-on-surface font-body min-h-screen flex flex-col relative selection:bg-neon-green selection:text-surface-dim overflow-x-hidden"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Home - ScamShield</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "surface-container-highest": "#2b3831",
+                    "on-secondary-fixed-variant": "#095300",
+                    "surface-container": "#16221d",
+                    "on-tertiary-container": "#30463a",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#2ff801",
+                    "inverse-surface": "#d7e6dd",
+                    "primary-fixed": "#69ff87",
+                    "on-secondary-container": "#0f6d00",
+                    "surface-container-lowest": "#05110c",
+                    "tertiary-container": "#9bb3a4",
+                    "on-primary-container": "#004c1b",
+                    "surface-container-high": "#202d27",
+                    "outline-variant": "#3c4a3c",
+                    "on-surface": "#d7e6dd",
+                    "on-surface-variant": "#bbcbb8",
+                    "secondary-fixed-dim": "#2ae500",
+                    "background": "#06120D",
+                    "outline": "#869583",
+                    "primary-fixed-dim": "#3ce36a",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#d0e8d8",
+                    "tertiary-fixed-dim": "#b4ccbd",
+                    "secondary-fixed": "#79ff5b",
+                    "on-secondary-fixed": "#022100",
+                    "on-tertiary-fixed-variant": "#364b40",
+                    "surface-tint": "#3ce36a",
+                    "on-error": "#690005",
+                    "surface-variant": "#2b3831",
+                    "inverse-primary": "#006e2a",
+                    "tertiary": "#b6cebf",
+                    "inverse-on-surface": "#26332d",
+                    "primary-container": "#00c853",
+                    "surface-bright": "#2f3c36",
+                    "surface-container-low": "#121e19",
+                    "primary": "#3fe56c",
+                    "on-tertiary": "#20352a",
+                    "error": "#ffb4ab",
+                    "secondary": "#d7ffc5",
+                    "on-background": "#d7e6dd",
+                    "on-tertiary-fixed": "#0a1f16",
+                    "on-secondary": "#053900",
+                    "on-primary": "#003912",
+                    "surface-dim": "#06120D",
+                    "on-primary-fixed": "#002108",
+                    "on-primary-fixed-variant": "#00531e",
+                    "surface": "#06120D",
+                    "neon-green": "#39FF14",
+                    "emerald-accent": "#00C853",
+                    "card-bg": "#10251B",
+                    "card-border": "#1B3B2B"
+                },
+                fontFamily: {
+                    headline: ["JetBrains Mono", "monospace"],
+                    display: ["JetBrains Mono", "monospace"],
+                    body: ["Inter", "sans-serif"],
+                    label: ["JetBrains Mono", "monospace"]
+                },
+                borderRadius: {
+                    DEFAULT: "0.125rem",
+                    lg: "0.25rem",
+                    xl: "0.5rem",
+                    full: "0.75rem"
+                }
+            }
+        }
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+    }
+
+    @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @keyframes pulseRing {
+        0% { r: 50; opacity: 0.85; }
+        50% { opacity: 0.35; }
+        100% { r: 125; opacity: 0; }
+    }
+    @keyframes cyberGlow {
+        0%, 100% { text-shadow: 0 0 12px rgba(57, 255, 20, 0.4), 0 0 25px rgba(0, 200, 83, 0.25); }
+        50% { text-shadow: 0 0 22px rgba(57, 255, 20, 0.75), 0 0 45px rgba(0, 200, 83, 0.45); }
+    }
+    @keyframes scanLine {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(1000%); }
+    }
+    .radar-sweep-beam {
+        animation: radarSweep 4s linear infinite;
+        transform-origin: 150px 150px;
+    }
+    .pulse-wave {
+        animation: pulseRing 3.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    }
+    .pulse-wave-delayed {
+        animation: pulseRing 3.2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+        animation-delay: 1.6s;
+    }
+    .matrix-glow-text {
+        animation: cyberGlow 3s ease-in-out infinite;
+    }
+    .bg-grid-cyber {
+        background-size: 36px 36px;
+        background-image:
+                linear-gradient(to right, rgba(27, 59, 43, 0.35) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(27, 59, 43, 0.35) 1px, transparent 1px);
+    }
+</style>
+
+
+<!-- Subtle Digital Noise Grid Overlay -->
+<div class="fixed inset-0 bg-grid-cyber pointer-events-none z-0 opacity-70"></div>
+<div class="fixed inset-0 bg-gradient-to-b from-transparent via-[#06120D]/60 to-[#06120D] pointer-events-none z-0"></div>
+<!-- Shared Top App Navigation Anchor -->
+<div class="relative z-20 w-full border-b border-card-border bg-[#0a1b14]/90 backdrop-blur-md">
+    <div class="max-w-[1280px] mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
+        <!-- Brand Logo -->
+        <a href="home.html" class="flex items-center gap-3 text-white hover:opacity-90 transition-opacity"><div class="size-7 rounded bg-surface-container flex items-center justify-center border border-card-border shadow-[0_0_15px_rgba(57,255,20,0.25)]"><svg class="size-4.5 text-primary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><span class="text-white text-base font-headline font-bold tracking-tight">ScamShield</span></a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-7 text-xs tracking-wider uppercase text-on-surface-variant font-body"><a class="hover:text-primary transition-colors flex items-center gap-1.5 font-body font-medium normal-case text-sm" href="#message-scanner" style="color: rgb(10, 31, 15);"><span class="size-1.5 rounded-full bg-emerald-accent"></span>Message Scanner</a><a class="hover:text-primary transition-colors font-body font-medium normal-case text-sm" href="#link-inspector">Link Scanner</a><a class="hover:text-primary transition-colors font-body font-medium normal-case text-sm" href="#email-scanner">Email Scanner</a><a class="hover:text-primary transition-colors font-body font-medium normal-case text-sm" href="#caller-id">Phone Number Scanner</a><a class="hover:text-primary transition-colors font-body font-medium normal-case text-sm" href="#threat-radar">Scam Awareness</a></nav>
+        <!-- Header CTAs -->
+        <div class="flex items-center gap-3"><a href="#message-scanner" class="flex cursor-pointer items-center justify-center rounded font-body text-xs font-semibold uppercase tracking-wider h-9 px-4.5 bg-primary-container hover:bg-neon-green hover:shadow-[0_0_20px_rgba(57,255,20,0.6)] transition-all" style="color: rgb(10, 31, 15);">Start scanning</a></div>
+    </div>
+</div>
+<!-- Main Hero Area -->
+<main class="relative z-10 flex-1 flex flex-col justify-between max-w-[1280px] w-full mx-auto px-4 lg:px-8 pt-8 pb-12">
+    <!-- Hero Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center py-6 lg:py-12">
+        <!-- Left Hero Text & CTA -->
+        <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+            <!-- Live System Metric Badge -->
+
+            <!-- Main Headline -->
+            <h1 class="text-white font-body text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]" style="text-shadow: rgba(57, 255, 20, 0.35) 0px 0px 12px;">Stay Alert. <br class="hidden sm:inline">Stay Protected.</h1>
+            <!-- Intro Line -->
+            <p class="text-on-surface-variant font-body text-base sm:text-lg leading-relaxed max-w-[620px]">Check messages, links, phone numbers and emails for common scam signs.</p>
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <!-- Primary CTA Button (Emerald with glowing hover) -->
+                <a href="#message-scanner" class="relative group cursor-pointer overflow-hidden rounded font-body text-sm font-bold uppercase tracking-wider px-7 py-3.5 bg-emerald-accent shadow-[0_0_20px_rgba(0,200,83,0.35)] hover:shadow-[0_0_30px_rgba(57,255,20,0.85)] hover:bg-neon-green transition-all duration-300 flex items-center gap-2.5" style="color: rgb(10, 31, 15);"><span class="material-symbols-outlined text-[18px]" style="color: #0a1f0f;">verified_user</span><span style="color: #0a1f0f;" class="">Get Started</span><span class="absolute inset-0 -translate-x-full group-hover:translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700"></span></a>
+                <!-- Neon Outlined High-Tech Button -->
+
+            </div>
+            <!-- Telemetry Status Bar Mini -->
+
+        </div>
+        <!-- Right Hero Animated Interactive SVG/CSS Shield Radar Graphic -->
+        <div class="lg:col-span-5 flex items-center justify-center relative">
+            <div class="relative w-full max-w-[390px] aspect-square flex items-center justify-center rounded-xl bg-[#091811]/90 border border-card-border shadow-[0_0_50px_rgba(0,200,83,0.15)] p-4 overflow-hidden">
+                <!-- Cyber HUD background accents -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(57,255,20,0.12)_0%,transparent_70%)] pointer-events-none"></div>
+                <!-- Shield Radar Graphic SVG -->
+                <svg class="w-full h-full relative z-10 select-none" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Neon Linear Gradient for Shield Glow -->
+                        <linearGradient id="shieldGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                            <stop offset="0%" stop-color="#39FF14" stop-opacity="0.95"></stop>
+                            <stop offset="100%" stop-color="#00C853" stop-opacity="0.65"></stop>
+                        </linearGradient>
+                        <!-- Radar sweep gradient -->
+                        <radialGradient cx="50%" cy="50%" id="radarSweepGradient" r="50%">
+                            <stop offset="0%" stop-color="#39FF14" stop-opacity="0.45"></stop>
+                            <stop offset="85%" stop-color="#00C853" stop-opacity="0.08"></stop>
+                            <stop offset="100%" stop-color="#00C853" stop-opacity="0"></stop>
+                        </radialGradient>
+                        <!-- Circuit Pattern Filter -->
+                        <filter height="140%" id="neonFilter" width="140%" x="-20%" y="-20%">
+                            <feGaussianBlur result="coloredBlur" stdDeviation="3.5"></feGaussianBlur>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"></feMergeNode>
+                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Grid Radar Concentric Circles -->
+                    <circle cx="150" cy="150" fill="none" r="130" stroke="#1B3B2B" stroke-dasharray="4 6" stroke-width="1.2"></circle>
+                    <circle cx="150" cy="150" fill="none" r="100" stroke="#1B3B2B" stroke-width="1"></circle>
+                    <circle cx="150" cy="150" fill="none" r="70" stroke="#1B3B2B" stroke-dasharray="2 4" stroke-width="1"></circle>
+                    <line stroke="#1B3B2B" stroke-dasharray="3 5" stroke-width="1" x1="150" x2="150" y1="15" y2="285"></line>
+                    <line stroke="#1B3B2B" stroke-dasharray="3 5" stroke-width="1" x1="15" x2="285" y1="150" y2="150"></line>
+                    <!-- Animated Radar Pulse Wave Rings -->
+                    <circle class="pulse-wave" cx="150" cy="150" fill="none" opacity="0.6" r="50" stroke="#39FF14" stroke-width="1.5"></circle>
+                    <circle class="pulse-wave-delayed" cx="150" cy="150" fill="none" opacity="0.6" r="50" stroke="#00C853" stroke-width="1.5"></circle>
+                    <!-- Rotating Radar Sector Sweep Beam -->
+                    <g class="radar-sweep-beam">
+                        <path d="M 150 150 L 150 20 A 130 130 0 0 1 250 80 Z" fill="url(#radarSweepGradient)" opacity="0.8"></path>
+                        <line filter="url(#neonFilter)" opacity="0.9" stroke="#39FF14" stroke-width="2" x1="150" x2="150" y1="150" y2="20"></line>
+                    </g>
+                    <!-- Circuit Traces around Shield -->
+                    <g fill="none" filter="url(#neonFilter)" opacity="0.85" stroke="#39FF14" stroke-width="1.5">
+                        <!-- Left Circuit -->
+                        <path d="M 60 90 L 85 90 L 100 115 L 115 115"></path>
+                        <circle cx="60" cy="90" fill="#39FF14" r="2.5"></circle>
+                        <circle cx="115" cy="115" fill="#00C853" r="2"></circle>
+                        <path d="M 50 190 L 80 190 L 95 170 L 115 170"></path>
+                        <circle cx="50" cy="190" fill="#39FF14" r="2.5"></circle>
+                        <!-- Right Circuit -->
+                        <path d="M 240 90 L 215 90 L 200 115 L 185 115"></path>
+                        <circle cx="240" cy="90" fill="#39FF14" r="2.5"></circle>
+                        <path d="M 250 190 L 220 190 L 205 170 L 185 170"></path>
+                        <circle cx="250" cy="190" fill="#39FF14" r="2.5"></circle>
+                        <circle cx="185" cy="170" fill="#00C853" r="2"></circle>
+                    </g>
+                    <!-- Intercept Blips -->
+                    <circle class="animate-ping" cx="215" cy="105" fill="#39FF14" filter="url(#neonFilter)" r="3"></circle>
+                    <circle cx="215" cy="105" fill="#FFFFFF" r="2.5"></circle>
+                    <circle cx="95" cy="210" fill="#22C55E" r="2.5"></circle>
+                    <!-- Center Shield Core (Cyberpunk Silhouette) -->
+                    <g transform="translate(150, 150) scale(1.15) translate(-150, -150)">
+                        <!-- Shield Outline Glow -->
+                        <path d="M 150 78 C 175 78, 206 90, 206 122 C 206 172, 172 208, 150 224 C 128 208, 94 172, 94 122 C 94 90, 125 78, 150 78 Z" fill="#10251B" filter="url(#neonFilter)" stroke="url(#shieldGrad)" stroke-width="3"></path>
+                        <!-- Inner Shield Pattern -->
+                        <path d="M 150 90 C 168 90, 192 100, 192 124 C 192 162, 166 193, 150 206 C 134 193, 108 162, 108 124 C 108 100, 132 90, 150 90 Z" fill="none" stroke="#1B3B2B" stroke-dasharray="3 3" stroke-width="1.5"></path>
+                        <!-- Central Emblem: Cyber Vector Core -->
+                        <path d="M 150 110 L 170 144 L 150 178 L 130 144 Z" fill="none" filter="url(#neonFilter)" stroke="#39FF14" stroke-width="2"></path>
+                        <path d="M 150 122 L 162 144 L 150 166 L 138 144 Z" fill="#00C853" opacity="0.35"></path>
+                        <circle cx="150" cy="144" fill="#39FF14" filter="url(#neonFilter)" r="4.5"></circle>
+                    </g>
+                </svg>
+                <!-- Floating HUD Coordinates Indicator -->
+
+            </div>
+        </div>
+    </section>
+    <!-- Risk Level Reference Indicators (Requirement 6.b) -->
+    <section class="my-6">
+        <div class="flex items-center justify-between mb-3 px-1">
+            <h3 class="font-label text-xs uppercase tracking-wider text-outline flex items-center gap-2">
+                <span class="material-symbols-outlined text-[15px] text-primary">speed</span>Risk levels</h3>
+            <span class="font-label text-[11px] text-on-surface-variant hidden sm:inline"><br></span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3"><div class="p-3.5 rounded bg-card-bg border border-card-border flex flex-col gap-1 transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="font-body text-xs font-semibold text-white">Safe</span><span class="size-2.5 rounded-full shadow-[0_0_8px_#00C853]" style="background-color: #00C853;"></span></div><p class="font-headline text-xl font-bold text-white tracking-tight">0</p></div><div class="p-3.5 rounded bg-card-bg border border-card-border flex flex-col gap-1 transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="font-body text-xs font-semibold text-white">Low</span><span class="size-2.5 rounded-full shadow-[0_0_8px_#22C55E]" style="background-color: #22C55E;"></span></div><p class="font-headline text-xl font-bold text-white tracking-tight">0</p></div><div class="p-3.5 rounded bg-card-bg border border-card-border flex flex-col gap-1 transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="font-body text-xs font-semibold text-white">Medium</span><span class="size-2.5 rounded-full shadow-[0_0_8px_#F59E0B]" style="background-color: #F59E0B;"></span></div><p class="font-headline text-xl font-bold text-white tracking-tight">0</p></div><div class="p-3.5 rounded bg-card-bg border border-card-border flex flex-col gap-1 transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="font-body text-xs font-semibold text-white">High</span><span class="size-2.5 rounded-full shadow-[0_0_8px_#F97316]" style="background-color: #F97316;"></span></div><p class="font-headline text-xl font-bold text-white tracking-tight">0</p></div><div class="col-span-2 sm:col-span-1 p-3.5 rounded bg-card-bg border border-card-border flex flex-col gap-1 transition-transform hover:-translate-y-0.5"><div class="flex items-center justify-between"><span class="font-body text-xs font-semibold text-white">Critical</span><span class="size-2.5 rounded-full shadow-[0_0_8px_#EF4444]" style="background-color: #EF4444;"></span></div><p class="font-headline text-xl font-bold text-white tracking-tight">0</p></div></div>
+    </section>
+    <!-- 4 Feature Cards (Requirement 5) -->
+    <section class="my-8">
+        <div class="mb-5 px-1">
+            <h2 class="font-headline text-2xl lg:text-3xl font-bold text-white tracking-tight">What you can check</h2>
+            <p class="text-on-surface-variant text-sm mt-1"><br></p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"><div class="p-5 rounded-lg bg-card-bg border border-card-border flex flex-col justify-between group hover:border-neon-green/80 hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition-all duration-300" id="message-scanner"><div class="flex flex-col gap-3.5"><div class="size-11 rounded bg-[#0b1c14] border border-card-border flex items-center justify-center text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">chat</span></div><h3 class="font-headline text-base font-bold text-white tracking-tight group-hover:text-neon-green transition-colors">Message Scanner</h3><p class="font-body text-xs leading-relaxed" style="color: #d7e6dd;">Check a message for scam signs</p></div></div><div class="p-5 rounded-lg bg-card-bg border border-card-border flex flex-col justify-between group hover:border-neon-green/80 hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition-all duration-300" id="link-inspector"><div class="flex flex-col gap-3.5"><div class="size-11 rounded bg-[#0b1c14] border border-card-border flex items-center justify-center text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">link</span></div><h3 class="font-headline text-base font-bold text-white tracking-tight group-hover:text-neon-green transition-colors">Link Scanner</h3><p class="font-body text-xs leading-relaxed" style="color: #d7e6dd;">Check a link for scam signs</p></div></div><div class="p-5 rounded-lg bg-card-bg border border-card-border flex flex-col justify-between group hover:border-neon-green/80 hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition-all duration-300" id="email-scanner"><div class="flex flex-col gap-3.5"><div class="size-11 rounded bg-[#0b1c14] border border-card-border flex items-center justify-center text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">mail</span></div><h3 class="font-headline text-base font-bold text-white tracking-tight group-hover:text-neon-green transition-colors">Email Scanner</h3><p class="font-body text-xs leading-relaxed" style="color: #d7e6dd;">Check an email address for scam signs</p></div></div><div class="p-5 rounded-lg bg-card-bg border border-card-border flex flex-col justify-between group hover:border-neon-green/80 hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition-all duration-300" id="caller-id"><div class="flex flex-col gap-3.5"><div class="size-11 rounded bg-[#0b1c14] border border-card-border flex items-center justify-center text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">phone_in_talk</span></div><h3 class="font-headline text-base font-bold text-white tracking-tight group-hover:text-neon-green transition-colors">Phone Number Scanner</h3><p class="font-body text-xs leading-relaxed" style="color: #d7e6dd;">Check a phone number for scam signs</p></div></div><div class="p-5 rounded-lg bg-card-bg border border-card-border flex flex-col justify-between group hover:border-neon-green/80 hover:shadow-[0_0_25px_rgba(57,255,20,0.2)] transition-all duration-300" id="threat-radar"><div class="flex flex-col gap-3.5"><div class="size-11 rounded bg-[#0b1c14] border border-card-border flex items-center justify-center text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[24px]">flag</span></div><h3 class="font-headline text-base font-bold text-white tracking-tight group-hover:text-neon-green transition-colors">Report a Scam</h3><p class="font-body text-xs leading-relaxed" style="color: #d7e6dd;">Tell us about a scam you saw</p></div></div></div>
+    </section>
+</main>
+<!-- Awareness Strip along the bottom (Requirement 6) -->
+<footer class="relative z-20 w-full border-t border-card-border bg-[#06140E] py-3.5 px-4 lg:px-8"><div class="text-xs text-neutral-500 text-center py-4 border-t border-neutral-800/40 mt-8">Results are estimates. Always double-check before sharing personal or financial information.</div></footer>
+
+
+
+
+
+
+
+
+
+<script src="nav.js"></script>
+</body></html>
